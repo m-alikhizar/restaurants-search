@@ -23,7 +23,7 @@ const searchRestaurants = catchAsync(async (req, res) => {
 const getRestaurant = catchAsync(async (req, res) => {
   const restaurant = await restaurantService.getRestaurantById(req.params.restaurant_id);
   if (!restaurant) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'Restaurant not found');
   }
   res.send(restaurant);
 });

@@ -19,7 +19,7 @@ const verifyCallback = (req, resolve, reject, requiredRights) => {
   }
 
   let hasRequiredRights = false;
-  if(requiredRights.includes('read') && requiredRights.includes('write')) {
+  if(user.role.includes('read') && user.role.includes('write')) {
     hasRequiredRights = true;
   } else {
     hasRequiredRights = requiredRights.every(right => user.role.includes(right));

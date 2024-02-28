@@ -4,3 +4,8 @@ services:
   node-app:
     container_name: node-app-prod
     command: yarn start
+  redis:
+    image: redis:latest
+    container_name: redis-prod
+    ports:
+      - '6379:6379'

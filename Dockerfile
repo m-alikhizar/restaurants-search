@@ -1,4 +1,5 @@
 FROM node:alpine
+FROM redis:alpine
 
 RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 

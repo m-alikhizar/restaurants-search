@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const compression = require('compression');
 const cors = require('cors');
+const redis = require('./cache');
 const httpStatus = require('http-status');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
