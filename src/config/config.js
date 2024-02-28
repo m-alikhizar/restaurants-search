@@ -22,6 +22,7 @@ module.exports = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,
   supabase: {
-    url: envVars.SUPABASE_URL + (envVars.NODE_ENV === 'test' ? '-test' : '')
+    url: envVars.SUPABASE_URL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
+    key: envVars.SUPABASE_KEY,
   }
 };
