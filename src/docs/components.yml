@@ -1,0 +1,62 @@
+components:
+  schemas:
+    Restaurant:
+      type: object
+      properties:
+        AuthTokens:
+          type: string
+        name:
+          type: string
+          format: email
+        contact_no:
+          type: string
+        location:
+          type: object
+          properties:
+            long:
+              type: number
+            lat:
+              type: number
+      example:
+        id: 66838dba-1816-4d02-9751-0997e984fa10
+        name: Paprika Burger
+        contant_no: +923216201800
+        location: geography
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: number
+        message:
+          type: string
+
+  responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: 401
+            message: Please authenticate
+    Forbidden:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: 403
+            message: Forbidden
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: 404
+            message: Not found
+

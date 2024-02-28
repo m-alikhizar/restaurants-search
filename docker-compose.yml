@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  node-app:
+    build: .
+    image: node-app
+    environment:
+      - SUPABASE_URL=https://zycfjdfjnslklfujqmsz.supabase.co
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/node-app
+
