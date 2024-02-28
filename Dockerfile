@@ -1,15 +1,18 @@
 FROM node:alpine
-FROM redis:alpine
 
-RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
+RUN apk add --no-cache redis
+
+RUN mkdir -p /usr/src/node-app
 
 WORKDIR /usr/src/node-app
 
 COPY package.json yarn.lock ./
 
-USER node
-
 RUN yarn install --pure-lockfile
+
+RUN chown -R node:node /usr/src/node-app
+
+USER node
 
 COPY --chown=node:node . .
 
